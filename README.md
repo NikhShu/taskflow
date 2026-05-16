@@ -1,12 +1,12 @@
-# ⚡ TaskFlow — Project & Task Management App
+# TaskFlow — Project & Task Management App
 
 A full-stack project management web application with role-based access control, built with Node.js, Express, and SQLite.
 
-**Live Demo:** `https://your-app.railway.app` *(replace after deploy)*
+**Live Demo:** `https://taskflow-production-7092.up.railway.app/` 
 
 ---
 
-## 🚀 Features
+## Features
 
 ### Authentication
 - Signup / Login with JWT tokens (7-day expiry)
@@ -49,7 +49,7 @@ A full-stack project management web application with role-based access control, 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -62,7 +62,7 @@ A full-stack project management web application with role-based access control, 
 
 ---
 
-## ⚙️ Local Development
+## Local Development
 
 ### Prerequisites
 - Node.js 18+
@@ -96,52 +96,6 @@ JWT_SECRET=your-secret-key-here
 
 ---
 
-## 🌐 Deploy to Railway
-
-### Method 1: GitHub (Recommended)
-
-1. **Push to GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/YOUR_USERNAME/taskflow.git
-   git push -u origin main
-   ```
-
-2. **Deploy on Railway:**
-   - Go to [railway.app](https://railway.app) and sign up/login
-   - Click **"New Project"** → **"Deploy from GitHub repo"**
-   - Select your `taskflow` repository
-   - Railway auto-detects Node.js and deploys
-
-3. **Set Environment Variables** (Railway Dashboard → Variables):
-   ```
-   JWT_SECRET = your-super-secret-jwt-key-min-32-chars
-   NODE_ENV = production
-   ```
-
-4. **Add a Volume** (for SQLite persistence):
-   - Railway Dashboard → your service → **"Volumes"** tab
-   - Add volume: Mount path → `/app/data`
-   - Set env var: `RAILWAY_VOLUME_MOUNT_PATH=/app/data`
-
-5. **Done!** Railway provides a public URL like `https://taskflow-production.up.railway.app`
-
-### Method 2: Railway CLI
-
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login
-railway login
-
-# Initialize & deploy
-railway init
-railway up
-```
-
 ### Important Notes for Railway
 - The app uses SQLite stored in `/data/taskflow.db`
 - Without a volume, data resets on each deploy — **always add a volume**
@@ -150,7 +104,7 @@ railway up
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 taskflow/
@@ -176,7 +130,7 @@ taskflow/
 
 ---
 
-## 🔌 REST API Reference
+## REST API Reference
 
 ### Auth
 | Method | Endpoint | Auth | Description |
@@ -221,13 +175,3 @@ taskflow/
 | DELETE | `/api/users/:id` | ✅ Admin | Delete user |
 
 ---
-
-## 📸 Demo Video
-
-[2-5 minute walkthrough showing all features]
-
----
-
-## 📄 License
-
-MIT
